@@ -1,0 +1,57 @@
+body{
+    /* background-image: url("../images/mainbackground.jpg"); */
+    /* opacity: 0.2; */
+    /* background-color: #e0e1e1; */
+}
+body::after {
+    /* background-color: #e0e1e1; */
+    content: "";
+    background: url("../images/main6.png");
+    opacity: 0.3;
+    /* top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;  */
+    /* width:100%;
+    height: 100%; */
+    position: absolute;
+    z-index: -1;
+    /* margin:auto;    */
+    /* background-repeat:no-repeat; */
+  }
+
+  .navbar{
+      /* font-family: 'Reenie Beanie', cursive; */
+      font-family: 'chewy', cursive;
+      /* font-weight: bolder; */
+      /* font-size: 40px; */
+      
+
+  }
+
+  .card{
+      background: none;
+      border:none;
+      /* border:4px black solid;
+      border-radius: 10px;
+      background-color: #4d4d4d;
+      color:white; */
+      
+  }
+  .card-body{
+    /* padding:1px;   */
+  }
+  .card-header{
+      /* font-family:sans-serif; */
+      font-size: 24px;  
+      /* padding:1px;    */
+  }
+  #ppfooter{
+      border-top: 1px solid #0075ff;
+  }
+  #pwdBackground{
+      background-color: #ce422d;
+      padding:10px;
+  }
+
+  

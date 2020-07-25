@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="assets/images/panda_trans_big.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    
+    <!--font awesome-->
+    <script src="https://use.fontawesome.com/b169762f77.js"></script>
+
+    <!-- my css  -->
+    <link rel="stylesheet" href="assets/styles/main.css" />
+
+    <title>Password Panda - Password Generator</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-light" style="background-color: #c6c8f0;">
+        <a class="navbar-brand" href="#">
+            <img src="assets/images/panda_trans_big.png" height="40" class="d-inline-block align-top"
+                alt="">
+            Password Panda - Password Generator
+        </a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+
+
+    </nav>
+    <!-- navbar ends -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header text-center">
+                        Create a strong Password with <span style="font-size: 26; font-family: 'chewy', cursive;">Password Panda</span>
+                        <img src="assets/images/panda_trans_big.png" class="card-img-left" height="40"/>
+                      </div>
+                    <div class="card-body">
+                        <div class="card-text text-center">
+                            <span>Use the slider, and the options, below.</span>
+                            <!-- <span>click on refresh button to generate new password with same options selected.</span> -->
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg"></div>
+        </div>
+        <form action="">
+            <div class="form-group" id="pwdBackground">
+                
+                <!-- <div id="pwdBackground" class="col-lg-12"> -->
+                    <div class="form-group row">
+                        <div class="col-lg-10">
+                            <input type="text" name="" id="pwd" class="form-control form-control-sm" >
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-outline-dark"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                        <!-- </div>
+                        <div class="col-md-1"> -->
+                            <button type="button" class="btn btn-outline-dark"><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- <br/> -->
+                    <div class="form-group row">
+                        <div class="col-sm-1">
+                    <button type="button" class="btn btn-lg"><img src="assets/images/panda_btn.png" height="30"></button>
+                        </div>
+                        <div class="col-sm-4">
+                    <input type="text" name="" id="pwd" class="form-control form-control-sm" >
+                </div>
+                </div>
+                    </div>
+                    
+                <!-- </div> -->
+                
+            
+            <div class="form-group">
+                <label for="formControlRange">Select Password Length</label>                
+                <input type="range" class="form-control-range" id="formControlRange" min="0" max="64" value="4"
+                    oninput="ageOutputId.value = formControlRange.value">
+                <output name="ageOutputName" id="ageOutputId"></output>
+            </div>
+        </form>
+    </div>
+    <nav id="ppfooter" class="navbar fixed-bottom" style="background-color: #c6c8f0;">
+        <img src="assets/images/panda_trans_big.png" height="40"/>
+        <a class="navbar-brand" href="#">Fixed bottom</a>
+    </nav>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
