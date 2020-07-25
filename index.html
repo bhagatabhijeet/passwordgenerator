@@ -13,7 +13,7 @@
 
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-    
+
     <!--font awesome-->
     <script src="https://use.fontawesome.com/b169762f77.js"></script>
 
@@ -27,8 +27,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-light" style="background-color: #c6c8f0;">
         <a class="navbar-brand" href="#">
-            <img src="assets/images/panda_trans_big.png" height="40" class="d-inline-block align-top"
-                alt="">
+            <img src="assets/images/panda_trans_big.png" height="40" class="d-inline-block align-top" alt="">
             Password Panda - Password Generator
         </a>
         <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,59 +42,68 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header text-center">
-                        Create a strong Password with <span style="font-size: 26; font-family: 'chewy', cursive;">Password Panda</span>
-                        <img src="assets/images/panda_trans_big.png" class="card-img-left" height="40"/>
-                      </div>
+                        Create a strong Password with <span
+                            style="font-size: 26; font-family: 'chewy', cursive;">Password Panda</span>
+                        <img src="assets/images/panda_trans_big.png" class="card-img-left" height="40" />
+                    </div>
                     <div class="card-body">
                         <div class="card-text text-center">
                             <span>Use the slider, and the options, below.</span>
                             <!-- <span>click on refresh button to generate new password with same options selected.</span> -->
                         </div>
                     </div>
-                  </div>
+                </div>
             </div>
-            <div class="col-lg"></div>
-        </div>
-        <form action="">
-            <div class="form-group" id="pwdBackground">
-                
-                <!-- <div id="pwdBackground" class="col-lg-12"> -->
-                    <div class="form-group row">
-                        <div class="col-lg-10">
-                            <input type="text" name="" id="pwd" class="form-control form-control-sm" >
-                        </div>
-                        <div class="col-md-2">
-                            <button type="button" class="btn btn-outline-dark"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-                        <!-- </div>
-                        <div class="col-md-1"> -->
-                            <button type="button" class="btn btn-outline-dark"><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+            <div class="col-lg-12">
+                <form action="">
+                    <div class="form-row" id="pwdBackground">
+        
+                        <!-- <div id="pwdBackground" class="col-lg-12"> -->
+                        <div class="form-group col-lg-12">
+                            <div class="col-lg-10">
+                                <input type="text" name="" id="pwd" class="form-control form-control-sm no-border">
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-outline"><i class="fa fa-refresh"
+                                        aria-hidden="true"></i></button>
+                            </div>
+                            <div class="col-md-1">
+                                <button type="button" class="btn btn-outline"><i class="fa fa-clipboard"
+                                        aria-hidden="true"></i></button>
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- <br/> -->
-                    <div class="form-group row">
+        
+                    <div class="form-row">
+                        <div class="form-group col-lg-12"></div>
                         <div class="col-sm-1">
-                    <button type="button" class="btn btn-lg"><img src="assets/images/panda_btn.png" height="30"></button>
+                            <button type="button" class="btn btn-lg"><img src="assets/images/panda_btn.png" height="20"
+                                    style="margin: 0px;"></button>
                         </div>
-                        <div class="col-sm-4">
-                    <input type="text" name="" id="pwd" class="form-control form-control-sm" >
-                </div>
-                </div>
+                        <div class="col-sm-3">
+                            <input type="text" name="" id="strenghtText" class="form-control form-control-sm no-border"
+                                readonly>
+                        </div>
                     </div>
-                    
-                <!-- </div> -->
-                
-            
-            <div class="form-group">
-                <label for="formControlRange">Select Password Length</label>                
-                <input type="range" class="form-control-range" id="formControlRange" min="0" max="64" value="4"
-                    oninput="ageOutputId.value = formControlRange.value">
-                <output name="ageOutputName" id="ageOutputId"></output>
             </div>
-        </form>
+        
+            <div class="form-row">
+                <div class="form-group col-lg-12">
+                    <label for="formControlRange">Select Password Length</label>
+                    <input type="range" class="form-control-range" id="formControlRange" min="0" max="64" value="4"
+                        oninput="ageOutputId.value = formControlRange.value">
+                    <output name="ageOutputName" id="ageOutputId"></output>
+                </div>
+            </div>
+            </form>
+
+            </div>
+        </div>
+        
     </div>
+    <!--container end-->
     <nav id="ppfooter" class="navbar fixed-bottom" style="background-color: #c6c8f0;">
-        <img src="assets/images/panda_trans_big.png" height="40"/>
+        <img src="assets/images/panda_trans_big.png" height="40" />
         <a class="navbar-brand" href="#">Fixed bottom</a>
     </nav>
 

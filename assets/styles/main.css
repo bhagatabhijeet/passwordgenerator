@@ -53,5 +53,18 @@ body::after {
       background-color: #ce422d;
       padding:10px;
   }
+  
+  .no-border {
+    outline: none;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+  /* #strenghtText,#pwd{
+      border:none !important;
+      border-bottom: 2px solid #0075ff;
+  } */
 
   
