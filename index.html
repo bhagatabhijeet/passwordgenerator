@@ -55,51 +55,85 @@
                 </div>
             </div>
             <div class="col-lg-12">
-                <form action="">
+                <form>
                     <div class="form-row" id="pwdBackground">
-        
-                        <!-- <div id="pwdBackground" class="col-lg-12"> -->
-                        <div class="form-group col-lg-12">
-                            <div class="col-lg-10">
-                                <input type="text" name="" id="pwd" class="form-control form-control-sm no-border">
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-outline"><i class="fa fa-refresh"
-                                        aria-hidden="true"></i></button>
-                            </div>
-                            <div class="col-md-1">
-                                <button type="button" class="btn btn-outline"><i class="fa fa-clipboard"
-                                        aria-hidden="true"></i></button>
-                            </div>
+                        <div class="form-group col-lg-10">
+                            <input type="email" class="form-control form-control-lg no-border" id="inputEmail4" readonly>
                         </div>
-                    </div>
-        
-                    <div class="form-row">
-                        <div class="form-group col-lg-12"></div>
-                        <div class="col-sm-1">
-                            <button type="button" class="btn btn-lg"><img src="assets/images/panda_btn.png" height="20"
-                                    style="margin: 0px;"></button>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-lg btn-outline-light"><i class="fa fa-refresh"
+                                    aria-hidden="true"></i></button>
                         </div>
-                        <div class="col-sm-3">
-                            <input type="text" name="" id="strenghtText" class="form-control form-control-sm no-border"
-                                readonly>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-lg btn-outline-light"><i class="fa fa-clipboard"
+                                    aria-hidden="true"></i></button>
                         </div>
-                    </div>
-            </div>
-        
-            <div class="form-row">
-                <div class="form-group col-lg-12">
-                    <label for="formControlRange">Select Password Length</label>
-                    <input type="range" class="form-control-range" id="formControlRange" min="0" max="64" value="4"
-                        oninput="ageOutputId.value = formControlRange.value">
-                    <output name="ageOutputName" id="ageOutputId"></output>
-                </div>
-            </div>
-            </form>
 
+                        <div class="form-group col-sm-12">
+                            <div class="text-center">
+                                <img src="assets/images/panda_btn.png" height="20" style="margin: 0px;" />
+                                <span id="strenghtSymbol"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                </span>
+                                <span id="strenghtText"> Good</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-lg-12">
+                            <label for="formControlRange">Select Password Length</label>
+                            <input type="range" class="form-control-range" id="formControlRange" min="0" max="64"
+                                value="4" oninput="ageOutputId.value = formControlRange.value">
+                            <output name="ageOutputName" id="ageOutputId"></output>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="repeatingchars">
+                                <label class="form-check-label" for="gridCheck">
+                                    Allow Repeating Characters
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="letters">
+                                <label class="form-check-label" for="gridCheck">
+                                    Letters
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="mixedcase">
+                                <label class="form-check-label" for="gridCheck">
+                                    Mixed Case
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="punctuations">
+                                <label class="form-check-label" for="gridCheck">
+                                    Punctuations
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="numbers">
+                                <label class="form-check-label" for="gridCheck">
+                                    Numbers
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-        
     </div>
     <!--container end-->
     <nav id="ppfooter" class="navbar fixed-bottom" style="background-color: #c6c8f0;">
