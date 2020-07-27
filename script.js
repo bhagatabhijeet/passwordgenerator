@@ -7,11 +7,17 @@ function writePassword() {
   var password = generatePassword();
   passwordText.value = password;
   passwordEngine.reset();
-
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+/**
+  * @desc generates password and returns the value to UI. The password is generated using passwordEngine Object.
+  * @param string $msg - the message to be displayed
+  * @return string - generated password.
+  * @author Abhijeet Bhagat
+*/
 
 function generatePassword() {
   passwordEngine.reset();
@@ -22,12 +28,23 @@ function generatePassword() {
   passwordEngine.validateUpperLower();
   passwordEngine.getNumeric();
   passwordEngine.getSpecial();
-  passwordText.value = ""; //clear the old password.  
+  passwordText.value = ""; //clear the old password. 
+
   return passwordEngine.generatePassword();
-  // return passwordEngine.charArray.join('');
+  
 }
 
+// THINKING OBJECT ORIENTED. One Password Engine Object for password operations
+
+/**
+  * @desc passwordEngine Object. The object to store all password criteria , state(like quit) and its operations namely
+  * getLower, getUpper, getNumeric, getSpecial,validateLength, validateUpperLower, reset and generatePassword
+  * @author Abhijeet Bhagat
+*/
 var passwordEngine = {
+  /**passwordEngine properties - lenght,lowerCase,upperCase,numeric and specialCharacters.
+   * quit is a special property used to keep checking if user wants to quit at any stage.
+ */
   charArray: [],
   quit: false,
   length: 0,
@@ -35,10 +52,14 @@ var passwordEngine = {
   upperCase: false,
   numeric: false,
   specialCharacters: false,
-  reset: function () {
+  
+  //reset - a function to reset this.quit and charArray in case user wants to try password generation again.
+  reset: function () { 
     this.quit = false;
     this.charArray = [];
   },
+  
+  //getLength - a function to get the desired length by user.
   getLength: function () {
     if (this.quit === false) {
       this.length = prompt(messageBuilder("Enter length of desired password.", "Valid Length is 8-128 characters."));
@@ -53,6 +74,8 @@ var passwordEngine = {
       }
     }
   },
+
+  //validateLength - a function to validate the length is not garbage and is within valid range of 8-128.
   validateLength: function () {
     if (this.quit === false) {
       while (isNaN(this.length) || this.length < 8 || this.length > 128) {
@@ -70,38 +93,46 @@ var passwordEngine = {
       }
     }
   },
+
+  //getLower - a function to get user preference - i.e if user wants to have lower case chars in password.
   getLower: function () {
     if (this.quit === false) {
       if (confirmType("lower")) {
         this.lowerCase = true;
+        //build Array from the string "abcd...." and push it on to charArray.
         this.charArray.push.apply(this.charArray, Array.from("abcdefghijklmnopqrstuvwxyz"));
       }
       else {
         this.lowerCase = false;
       }
-      var msg = this.lowerCase ? "Yes" : "No";
+      var msg = this.lowerCase ? "Yes" : "No"; //Ternary operator.
 
       if (!confirmContinue(msg, "lower case alphabets")) {
         this.quit = true;
       }
     }
   },
+
+  //getUpper - a function to get user preference - i.e if user wants to have upper case chars in password.
   getUpper: function () {
     if (this.quit === false) {
       if (confirmType("upper")) {
         this.upperCase = true;
+        //build Array from the string "ABCD...." and push it on to charArray.
         this.charArray.push.apply(this.charArray, Array.from("ABCDEFGHIJKLMNOPQRSTUVWXYZ"));
       }
       else {
         this.upperCase = false;
       }
-      var msg = this.upperCase ? "Yes" : "No";
+      var msg = this.upperCase ? "Yes" : "No";//Ternary operator.
 
       if (!confirmContinue(msg, "upper case alphabets")) {
         this.quit = true;
       }
     }
   },
+
+  //validateUpperLower - a function to validate is atleast one type from upper or lower is selected.
   validateUpperLower: function () {
     if (this.quit === false) {
       while (this.lowerCase === false && this.upperCase === false && this.quit == false) {
@@ -126,37 +157,45 @@ var passwordEngine = {
       }
     }
   },
+
+  //getLower - a function to get user preference - i.e if user wants to have numbers in password.
   getNumeric: function () {
     if (this.quit === false) {
       if (confirmType("numeric")) {
         this.numeric = true;
+        //build Array from the string "01234...." and push it on to charArray.
         this.charArray.push.apply(this.charArray, Array.from("0123456789"));
       }
       else {
         this.numeric = false;
       }
-      var msg = this.numeric ? "Yes" : "No";
+      var msg = this.numeric ? "Yes" : "No";//Ternary operator.
 
       if (!confirmContinue(msg, "numbers")) {
         this.quit = true;
       }
     }
   },
+
+  //getLower - a function to get user preference - i.e if user wants to have special chars in password.
   getSpecial: function () {
     if (this.quit === false) {
       if (confirmType("special")) {
         this.specialCharacters = true;
+        //build Array from the special charactersstring and push it on to charArray.
         this.charArray.push.apply(this.charArray, Array.from("!@#$%^&*-_+=.?"));
       }
       else {
         this.specialCharacters = false;
       }
-      var msg = this.specialCharacters ? "Yes" : "No";
+      var msg = this.specialCharacters ? "Yes" : "No";//Ternary operator.
       if (!confirmContinue(msg, "special characters")) {
         this.quit = true;
       }
     }
   },
+
+  //generatePassword - this is the function which actually generate the password using random selection from charArray.
   generatePassword: function () {
     console.log("here" + this.length);
     var pwd = "";
@@ -172,8 +211,15 @@ var passwordEngine = {
     return pwd;
   }
 }
-// function to build prompt, confirm, alert message in a nicer way.
-// so that you don't have to include the \n in the message.
+
+/**
+  * @desc function to build prompt, confirm, alert message in a nicer way.
+  * @param string  mainMessage - the main message to be displayed.A line is inserted after main message.
+  * @param string  secondMessage - the second message to be displayed.
+  * @param string  thirdMessage - the third message to be displayed.
+  * @param string  fourthMessage - the fourth message to be displayed.
+  * @return string contcatenated, formatted string.
+*/
 function messageBuilder(mainMessage, secondMessage, thirdMessage, fourthMessage) {
   var message = mainMessage;
   if (secondMessage !== undefined) {
@@ -188,6 +234,13 @@ function messageBuilder(mainMessage, secondMessage, thirdMessage, fourthMessage)
   return message;
 }
 
+/**
+  * @desc function to keep the confirmmessages so that they could be called when required.
+  * This reduces clutter in the calling functions.
+  * @param string  strType - the type of password criterion like lower,upper,numeric, special
+  * @return boolean  - result of specific confirmation.
+  * @author Abhijeet Bhagat
+*/
 function confirmType(strType) {
   switch (strType) {
     case "lower":
@@ -219,17 +272,31 @@ function confirmType(strType) {
   }
 }
 
+/**
+  * @desc function to seek confirmation to continue from user.
+  * This is to keep code DRY.
+  * @param string  strYesNo - a "yes" or "No" string.
+  * @return boolean  - result of confirmation.
+  * @author Abhijeet Bhagat
+*/
 function confirmContinue(strYesNo, strType) {
   return confirm(messageBuilder("You selected '" + strYesNo.toUpperCase() + "' for '" + strType.toUpperCase() + "'.", "Do you want to continue?"));
 }
 
+
+/**
+  * @desc function to seek confirmation to quit from user.
+  * This is to keep code DRY.
+  * @return boolean  - result of confirmation.
+  * @author Abhijeet Bhagat
+*/
 function confirmQuit() {
   return confirm(
     messageBuilder("You pressed 'Cancel'.", " Do you want to quit?")
   );
 }
 
-/**
+/**  The above code is to meet requirements mentioned in following use cases.
  *  USE CASES:
 GIVEN I need a new, secure password
 WHEN I click the button to generate a password
