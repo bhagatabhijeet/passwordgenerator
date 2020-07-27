@@ -13,8 +13,7 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 /**
-  * @desc generates password and returns the value to UI. The password is generated using passwordEngine Object.
-  * @param string $msg - the message to be displayed
+  * @desc generates password and returns the value to UI. The password is generated using passwordEngine Object.  
   * @return string - generated password.
   * @author Abhijeet Bhagat
 */
