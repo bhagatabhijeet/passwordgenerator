@@ -12,6 +12,12 @@
 * **After every criteria selection** the user is **given ability to quit** or continue.
 * once all confirmations and prompts for criteria are answered. Password Generator then generates a random password and displays it on UI.
 
+### Demo
+
+ <div align="center">
+ <img src="assets/demo.gif"/>
+ </div>
+
 ## Author and Deployment details:
 * Deployed : [Git Hub Pages](https://bhagatabhijeet.github.io/passwordgenerator/index.html)
 * Repository : [Git Hub](https://github.com/bhagatabhijeet/passwordgenerator)
