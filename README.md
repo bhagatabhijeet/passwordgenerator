@@ -34,6 +34,12 @@ Full Browser
 
 ## Technical Requirements and Use Cases:
 
+### Flow Cart
+
+ <div align="center">
+ <img src="assets/flow_chart.png"/>
+ </div>
+
 ### User Story
 
 ```
