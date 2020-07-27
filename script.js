@@ -25,13 +25,12 @@ function generatePassword() {
   passwordEngine.validateLength();
   passwordEngine.getLower();
   passwordEngine.getUpper();
-  passwordEngine.validateUpperLower();
   passwordEngine.getNumeric();
   passwordEngine.getSpecial();
   passwordText.value = ""; //clear the old password. 
 
   return passwordEngine.generatePassword();
-  
+
 }
 
 // THINKING OBJECT ORIENTED. One Password Engine Object for password operations
@@ -52,20 +51,21 @@ var passwordEngine = {
   upperCase: false,
   numeric: false,
   specialCharacters: false,
-  
+
   //reset - a function to reset this.quit and charArray in case user wants to try password generation again.
-  reset: function () { 
+  reset: function () {
     this.quit = false;
     this.charArray = [];
   },
-  
+
   //getLength - a function to get the desired length by user.
   getLength: function () {
     if (this.quit === false) {
-      this.length = prompt(messageBuilder("Enter length of desired password.", "Valid Length is 8-128 characters."));
+      this.length = prompt(messageBuilder("Enter Length Of Password.", "Valid length is 8-128 characters."));
       if (this.length === null) {
         if (confirmQuit()) {
           this.quit = true;
+          showQuitAlert();
           return;
         }
         else {
@@ -84,6 +84,7 @@ var passwordEngine = {
         if (this.length === null) {
           if (confirmQuit()) {
             this.quit = true;
+            showQuitAlert();
             return;
           }
           else {
@@ -109,6 +110,7 @@ var passwordEngine = {
 
       if (!confirmContinue(msg, "lower case alphabets")) {
         this.quit = true;
+        showQuitAlert();
       }
     }
   },
@@ -128,32 +130,7 @@ var passwordEngine = {
 
       if (!confirmContinue(msg, "upper case alphabets")) {
         this.quit = true;
-      }
-    }
-  },
-
-  //validateUpperLower - a function to validate is atleast one type from upper or lower is selected.
-  validateUpperLower: function () {
-    if (this.quit === false) {
-      while (this.lowerCase === false && this.upperCase === false && this.quit == false) {
-        if (confirm(
-          messageBuilder(
-            "Alphabet Selection Is Required.",
-            "You need To Select Atleast One From Upper or Lower case alphabets.",
-            "Continue?")
-        )) {
-          this.getLower();
-          this.getUpper();
-        }
-        else {
-          if (confirmQuit()) {
-            this.quit = true;
-            return;
-          }
-          else {
-            this.quit = false;
-          }
-        }
+        showQuitAlert();
       }
     }
   },
@@ -173,6 +150,7 @@ var passwordEngine = {
 
       if (!confirmContinue(msg, "numbers")) {
         this.quit = true;
+        showQuitAlert();
       }
     }
   },
@@ -191,19 +169,29 @@ var passwordEngine = {
       var msg = this.specialCharacters ? "Yes" : "No";//Ternary operator.
       if (!confirmContinue(msg, "special characters")) {
         this.quit = true;
+        showQuitAlert();
       }
     }
   },
 
   //generatePassword - this is the function which actually generate the password using random selection from charArray.
   generatePassword: function () {
-    console.log("here" + this.length);
     var pwd = "";
     if (this.quit === false) {
+      if (this.charArray.length === 0) {
+        alert(
+          messageBuilder(
+            "No Criterion Selected.",
+            "Password Generator cannot generate password!",
+            "Press 'Generate Password' button again and select atleast one criterion."
+          )
+        );
+        return pwd;
+      }
       for (let i = 0; i < this.length; i++) {
         pwd = pwd + this.charArray[Math.floor(Math.random() * this.charArray.length)];
-        console.log(pwd);
       }
+      console.log(pwd);
     }
     else {
       pwd = "";
@@ -245,27 +233,27 @@ function confirmType(strType) {
   switch (strType) {
     case "lower":
       return confirm(
-        messageBuilder("Do you want lower case alphabets in your password?",
+        messageBuilder("Include Lower Case Alphabets In Password?",
           "Example: 'abc'.",
           "Press 'Ok' for 'Yes', 'Cancel' for 'No'."
         )
       );
     case "upper":
       return confirm(
-        messageBuilder("Do you want upper case alphabets in your password?",
+        messageBuilder("Include Upper Case Alphabets In Password?",
           "Example: 'ABC'.",
           "Press 'Ok' for 'Yes', 'Cancel' for 'No'."
         )
       );
     case "numeric":
       return confirm(
-        messageBuilder("Do you want numbers in your password?", "Example: '123'.",
+        messageBuilder("Include Numbers In Password?", "Example: '123'.",
           "Press 'Ok' for 'Yes', 'Cancel' for 'No'."
         )
       );
     case "special":
       return confirm(
-        messageBuilder("Do you want special characters in your password?", "Example: '!@#'.",
+        messageBuilder("Include Special Characters In Password?", "Example: '!@#'.",
           "Press 'Ok' for 'Yes', 'Cancel' for 'No'."
         )
       );
@@ -280,9 +268,8 @@ function confirmType(strType) {
   * @author Abhijeet Bhagat
 */
 function confirmContinue(strYesNo, strType) {
-  return confirm(messageBuilder("You selected '" + strYesNo.toUpperCase() + "' for '" + strType.toUpperCase() + "'.", "Do you want to continue?"));
+  return confirm(messageBuilder("You Selected '" + strYesNo.toUpperCase() + "' For '" + strType.toUpperCase() + "'.", "Do you want to continue?"));
 }
-
 
 /**
   * @desc function to seek confirmation to quit from user.
@@ -292,7 +279,23 @@ function confirmContinue(strYesNo, strType) {
 */
 function confirmQuit() {
   return confirm(
-    messageBuilder("You pressed 'Cancel'.", " Do you want to quit?")
+    messageBuilder("You Pressed 'Cancel'.", " Do you want to quit?")
+  );
+}
+
+/**
+  * @desc function to show alert message upon quitting.
+  * This is to keep code DRY.
+  * @return void
+  * @author Abhijeet Bhagat
+*/
+function showQuitAlert() {
+  alert(
+    messageBuilder(
+      "You Are About To Quit Password Generation Process.",
+      "Password Generator will *NOT* generate password!",
+      "Press 'Generate Password' button if you wan to begin again and select atleast one criterion."
+    )
   );
 }
 
