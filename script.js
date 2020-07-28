@@ -13,11 +13,10 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 /**
-  * @desc generates password and returns the value to UI. The password is generated using passwordEngine Object.  
+  * @desc  generatePassword function generates password and returns the value to UI. The password is generated using passwordEngine Object.  
   * @return string - generated password.
   * @author Abhijeet Bhagat
 */
-
 function generatePassword() {
   passwordEngine.reset();
   passwordEngine.getLength();
@@ -51,13 +50,13 @@ var passwordEngine = {
   numeric: false,
   specialCharacters: false,
 
-  //reset - a function to reset this.quit and charArray in case user wants to try password generation again.
+  //resmethod to reset this.quit and charArray in case user wants to try password generation again.
   reset: function () {
     this.quit = false;
     this.charArray = [];
   },
 
-  //getLength - a function to get the desired length by user.
+  //getLength - a method to get the desired length by user.
   getLength: function () {
     if (this.quit === false) {
       this.length = prompt(messageBuilder("Enter Length Of Password.", "Valid length is 8-128 characters."));
@@ -74,7 +73,7 @@ var passwordEngine = {
     }
   },
 
-  //validateLength - a function to validate the length is not garbage and is within valid range of 8-128.
+  //validateLength - a method to validate the length is not garbage and is within valid range of 8-128.
   validateLength: function () {
     if (this.quit === false) {
       while (isNaN(this.length) || this.length < 8 || this.length > 128) {
@@ -94,7 +93,7 @@ var passwordEngine = {
     }
   },
 
-  //getLower - a function to get user preference - i.e if user wants to have lower case chars in password.
+  //getLower - a method to get user preference - i.e if user wants to have lower case chars in password.
   getLower: function () {
     if (this.quit === false) {
       if (confirmType("lower")) {
@@ -114,7 +113,7 @@ var passwordEngine = {
     }
   },
 
-  //getUpper - a function to get user preference - i.e if user wants to have upper case chars in password.
+  //getUpper - a method to get user preference - i.e if user wants to have upper case chars in password.
   getUpper: function () {
     if (this.quit === false) {
       if (confirmType("upper")) {
@@ -134,7 +133,7 @@ var passwordEngine = {
     }
   },
 
-  //getLower - a function to get user preference - i.e if user wants to have numbers in password.
+  //getNumeric - a method to get user preference - i.e if user wants to have numbers in password.
   getNumeric: function () {
     if (this.quit === false) {
       if (confirmType("numeric")) {
@@ -154,7 +153,7 @@ var passwordEngine = {
     }
   },
 
-  //getLower - a function to get user preference - i.e if user wants to have special chars in password.
+  //getSpecial - a method to get user preference - i.e if user wants to have special chars in password.
   getSpecial: function () {
     if (this.quit === false) {
       if (confirmType("special")) {
@@ -173,7 +172,7 @@ var passwordEngine = {
     }
   },
 
-  //generatePassword - this is the function which actually generate the password using random selection from charArray.
+  //generatePassword - this is the method which actually generate the password using random selection from charArray.
   generatePassword: function () {
     var pwd = "";
     if (this.quit === false) {
@@ -200,7 +199,7 @@ var passwordEngine = {
 }
 
 /**
-  * @desc function to build prompt, confirm, alert message in a nicer way.
+  * @desc  messageBuilder function is used to build prompt, confirm, alert message in a nicer way.
   * @param string  mainMessage - the main message to be displayed.A line is inserted after main message.
   * @param string  secondMessage - the second message to be displayed.
   * @param string  thirdMessage - the third message to be displayed.
@@ -222,7 +221,7 @@ function messageBuilder(mainMessage, secondMessage, thirdMessage, fourthMessage)
 }
 
 /**
-  * @desc function to keep the confirmmessages so that they could be called when required.
+  * @desc confirmType function is created to keep the confirmmessages so that they could be called when required.
   * This reduces clutter in the calling functions.
   * @param string  strType - the type of password criterion like lower,upper,numeric, special
   * @return boolean  - result of specific confirmation.
@@ -260,7 +259,7 @@ function confirmType(strType) {
 }
 
 /**
-  * @desc function to seek confirmation to continue from user.
+  * @desc confirmContinue function is created to seek confirmation to continue from user.
   * This is to keep code DRY.
   * @param string  strYesNo - a "yes" or "No" string.
   * @return boolean  - result of confirmation.
@@ -271,7 +270,7 @@ function confirmContinue(strYesNo, strType) {
 }
 
 /**
-  * @desc function to seek confirmation to quit from user.
+  * @desc confirmQuit function is created to seek confirmation to quit from user.
   * This is to keep code DRY.
   * @return boolean  - result of confirmation.
   * @author Abhijeet Bhagat
@@ -283,7 +282,7 @@ function confirmQuit() {
 }
 
 /**
-  * @desc function to show alert message upon quitting.
+  * @desc showQuitAlert function is used to show alert message upon quitting.
   * This is to keep code DRY.
   * @return void
   * @author Abhijeet Bhagat
@@ -298,8 +297,9 @@ function showQuitAlert() {
   );
 }
 
-/**  The above code is to meet requirements mentioned in following use cases.
- *  USE CASES:
+/**  In ADIITION to following use cases, The application gives an ability TO BE ABLE TO QUIT at ANY STAGE.
+ *  
+ * USE CASES:
 GIVEN I need a new, secure password
 WHEN I click the button to generate a password
 THEN I am presented with a series of prompts for password criteria
