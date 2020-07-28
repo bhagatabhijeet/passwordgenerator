@@ -1,29 +1,29 @@
 # passwordgenerator
 
- An application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+ An application that generates a random password based on user-selected criteria. This runs in the browser and feature dynamically updated HTML and CSS powered by JavaScript code. The app has a responsive clean and polished user interface, ensuring that it adapts to multiple screen sizes.
 
  <div align="center">
  <img src="assets/logo.png"/>
  </div>
 
- ## how it works
+# how it works
 
  * Password Generator gets your preferences for password via a series of prompts and confirmations.
 * **After every criteria selection** the user is **given ability to quit** or continue.
 * once all confirmations and prompts for criteria are answered. Password Generator then generates a random password and displays it on UI.
 
-### Demo
+# Demo
 
  <div align="center">
  <img src="assets/demo.gif"/>
  </div>
 
-## Author and Deployment details:
+# Author and Deployment details
 * Deployed : [Git Hub Pages](https://bhagatabhijeet.github.io/passwordgenerator/index.html)
 * Repository : [Git Hub](https://github.com/bhagatabhijeet/passwordgenerator)
 * Coded By : Abhijeet Bhagat([Git Hub Profile](https://github.com/bhagatabhijeet))
 
-## Some Screen Shots
+# Some Screen Shots
 <div align="center">
 Full Browser
  <img src="assets/full_browser.png"/>
@@ -38,15 +38,15 @@ Full Browser
  </table>
  </div>_
 
-## Technical Requirements and Use Cases:
+# Technical Requirements and Use Cases:
 
-### Flow Cart
+## Flow Cart
 
  <div align="center">
  <img src="assets/flow_chart.png"/>
  </div>
 
-### User Story
+## User Story
 
 ```
 AS AN employee with access to sensitive data
@@ -54,7 +54,7 @@ I WANT to randomly generate a password that meets certain criteria
 SO THAT I can create a strong password that provides greater security
 ```
 
-### Acceptance Criteria
+## Acceptance Criteria
 
 ```
 GIVEN I need a new, secure password
