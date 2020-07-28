@@ -50,7 +50,7 @@ var passwordEngine = {
   numeric: false,
   specialCharacters: false,
 
-  //resmethod to reset this.quit and charArray in case user wants to try password generation again.
+  //reset method is used to reset this.quit and this.charArray in case user wants to try password generation again.
   reset: function () {
     this.quit = false;
     this.charArray = [];
