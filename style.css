@@ -151,6 +151,34 @@ footer:hover{
 
 }
 
+#improvedversion{
+  font-size: 15px;
+  text-align: center;
+  margin-top:10px;
+  border: 1px solid #4ca0fc;
+  width:50%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 5px 10px #888888;
+}
+#improvedverimg{
+  width: 30%;
+  height:30%;
+  border:#a11f2c solid 2px;
+}
+#improvedverimg:hover{
+  
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  opacity: 1;
+  transform: scale(4);
+  -ms-transform: scale(4); /* IE 9 */
+  -webkit-transform: scale(4); /* Safari and Chrome */
+}
+
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
